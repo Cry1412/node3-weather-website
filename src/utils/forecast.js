@@ -9,7 +9,7 @@ const forecast = (lat, lon, callback) => {
         } else if (!body) {
             callback('Unable to find location', undefined)
         } else {
-            callback(undefined, 'The tempature is ' + body.current.temp_c + " C")
+            callback(undefined, body.current.condition.text + ', the tempature is ' + body.current.temp_c + " C" + " but feels like " + body.current.feelslike_c + " C")
         }
     })
 }
